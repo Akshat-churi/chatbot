@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaxWise AI Assistant - Voice Enabled</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+    
+      <header class="app-header">
+        <b><h1 class="heading">Financial Query AI Assistant</h1></b>
+        <p class="sub-heading">Your guide for financial literacy</p>
+        <div class="voice-status">
+          <span id="voice-status-text">Voice ready</span>
+          <div id="voice-indicator" class="voice-indicator"></div>
+        </div>
+      </header>
+      
+    
+      <ul class="suggestions">
+        <li class="suggestions-item">
+          <p class="text">What is the difference between direct tax and indirect tax?</p>
+          <span class="icon material-symbols-rounded">draw</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">What is income tax slab for 2024-25?</p>
+          <span class="icon material-symbols-rounded">lightbulb</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Explain what is Mutual Funds</p>
+          <span class="icon material-symbols-rounded">explore</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Explain different Government Schemes</p>
+          <span class="icon material-symbols-rounded">code_blocks</span>
+        </li>
+      </ul>
+      
+      <div class="chats-container"></div>
+      
+    
+      <div class="prompt-container">
+        <div class="prompt-wrapper">
+          <form action="#" class="prompt-form">
+            <input type="text" placeholder="Ask AI Assistant or speak your question..." class="prompt-input" required />
+            <div class="prompt-actions">
+              
+              <button id="voice-record-btn" type="button" class="material-symbols-rounded voice-btn" title="Start voice recording">
+                mic
+              </button>
+              
+              
+              <div class="file-upload-wrapper">
+                <img src="#" class="file-preview" />
+                <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
+                <button type="button" class="file-icon material-symbols-rounded">description</button>
+                <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
+                <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
+              </div>
+              
+              
+              <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
+              <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+          </form>
+          
+          
+          <button id="voice-settings-btn" class="material-symbols-rounded" title="Voice settings">settings_voice</button>
+          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+        </div>
+       <br>
+       
+      </div>
+    </div>
+
+    
+    <div id="voice-settings-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Voice Settings</h3>
+          <button id="close-voice-settings" class="material-symbols-rounded">close</button>
+        </div>
+        <div class="modal-body">
+          <div class="setting-group">
+            <label for="voice-select">Select Voice:</label>
+            <select id="voice-select">
+              <option value="">Default</option>
+            </select>
+          </div>
+          <div class="setting-group">
+            <label for="voice-rate">Speech Rate:</label>
+            <input type="range" id="voice-rate" min="0.5" max="2" step="0.1" value="1">
+            <span id="rate-value">1.0</span>
+          </div>
+          <div class="setting-group">
+            <label for="voice-pitch">Voice Pitch:</label>
+            <input type="range" id="voice-pitch" min="0" max="2" step="0.1" value="1">
+            <span id="pitch-value">1.0</span>
+          </div>
+          <div class="setting-group">
+            <label for="voice-volume">Volume:</label>
+            <input type="range" id="voice-volume" min="0" max="1" step="0.1" value="1">
+            <span id="volume-value">1.0</span>
+          </div>
+          <div class="setting-group">
+            <label>
+              <input type="checkbox" id="auto-speak" checked>
+              Auto-speak responses
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
